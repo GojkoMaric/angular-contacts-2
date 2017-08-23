@@ -7,6 +7,8 @@ import { LayoutComponent } from './components/layout/layout.component';
 import { MessagesComponent } from './components/messages/messages.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ContactDetailsComponent } from './components/contacts/contact-details/contact-details.component';
+import { SharedModule } from './shared/shared.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { ContactDetailsComponent } from './components/contacts/contact-details/c
   imports: [
     BrowserModule,
     AppRoutingModule,
+    SharedModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -8,6 +8,7 @@ import { contacts } from './contacts';
 export class ContactsComponent {
 
   private contacts: any[];
+  private filter: String = '';
 
   constructor() {
     this.contacts = contacts;
