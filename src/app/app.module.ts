@@ -9,6 +9,11 @@ import { MessagesComponent } from './components/messages/messages.component';
 
 const appRoutes: Routes = [
   {
+    path: '',
+    redirectTo: '/contacts',
+    pathMatch: 'full'
+  },
+  {
     path: 'contacts',
     component: ContactsComponent
   },
