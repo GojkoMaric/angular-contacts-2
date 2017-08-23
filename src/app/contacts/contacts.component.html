@@ -1,13 +1,17 @@
 <h1>Contacts</h1>
 
-<ul>
-  <li *ngFor="let contact of contacts">
-    <p>
-      Name: {{ contact.firstName }} {{ contact.lastName }}
-    </p>
-    <p>
-      Email: {{ contact.email }}
-    </p>
-    <button class="btn btn-danger" (click)="remove(contact)">Remove</button>
-  </li>
-</ul>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let contact of contacts">
+      <td class="align-middle">{{ contact.firstName }} {{ contact.lastName }}</td>
+      <td class="align-middle">{{ contact.email }}</td>
+      <td><button class="btn btn-danger btn-sm" (click)="remove(contact)">Remove</button></td>
+    </tr>
+</table>
