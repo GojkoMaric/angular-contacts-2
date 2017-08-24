@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { contacts } from './contacts';
+import { ContactsService } from '../../shared/services/contacts.service';
 
 @Component({
   selector: 'app-contacts',
@@ -11,7 +11,8 @@ export class ContactsComponent {
   private filter: String = '';
 
   constructor() {
-    this.contacts = contacts;
+    let contactService = new ContactsService();
+    this.contacts = contactService.getContacts();
   }
 
   remove(contact) {
