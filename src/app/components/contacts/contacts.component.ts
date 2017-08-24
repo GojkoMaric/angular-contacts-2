@@ -11,9 +11,14 @@ export class ContactsComponent {
   private filter: String = '';
 
   constructor(contactService: ContactsService) {
-    contactService.getContacts().subscribe(data => {
+    contactService.getContacts().subscribe(
+      data => {
         this.contacts = data;
-      });
+      },
+      err => {
+        alert('Something went wrong!');
+      }
+    );
   }
 
   remove(contact) {
