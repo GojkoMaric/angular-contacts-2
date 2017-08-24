@@ -14,7 +14,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let contact of contacts | filter : 'firstName' : filter">
+    <tr *ngFor="let contact of contacts | filter : ['firstName', 'lastName'] : filter">
       <td class="align-middle">
         <a [routerLink]="['/contacts', contact.id]">
           {{ contact.firstName }} {{ contact.lastName }}
