@@ -11,7 +11,7 @@ export class ContactsComponent {
   private contacts: any[] = [];
   private filter: String = '';
 
-  constructor(contactService: ContactsService) {
+  constructor(private contactService: ContactsService) {
     contactService.getContacts().subscribe(
       data => {
         this.contacts = data;
@@ -25,6 +25,15 @@ export class ContactsComponent {
   remove(contact) {
     const index = this.contacts.indexOf(contact);
     this.contacts.splice(index, 1);
+  }
+
+  addContact() {
+    this.contactService.addContact('Sam', 'Jee', 'sam.jee@example.com')
+      .subscribe(
+        contact => {
+          this.contacts.push(contact);
+        }
+      );
   }
 
 }
