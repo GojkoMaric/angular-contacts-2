@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ContactsService } from '../../shared/services/contacts.service';
+import { HttpErrorResponse } from '@angular/common/http';
 
 @Component({
   selector: 'app-contacts',
@@ -15,8 +16,8 @@ export class ContactsComponent {
       data => {
         this.contacts = data;
       },
-      err => {
-        alert('Something went wrong!');
+      (err: HttpErrorResponse) => {
+        alert(`Backend returned code ${err.status} with message: ${err.error}`);
       }
     );
   }
