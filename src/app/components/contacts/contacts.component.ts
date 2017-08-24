@@ -10,8 +10,7 @@ export class ContactsComponent {
   private contacts: any[];
   private filter: String = '';
 
-  constructor() {
-    let contactService = new ContactsService();
+  constructor(contactService: ContactsService) {
     this.contacts = contactService.getContacts();
   }
 
