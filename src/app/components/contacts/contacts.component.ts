@@ -7,11 +7,13 @@ import { ContactsService } from '../../shared/services/contacts.service';
 })
 export class ContactsComponent {
 
-  private contacts: any[];
+  private contacts: any[] = [];
   private filter: String = '';
 
   constructor(contactService: ContactsService) {
-    this.contacts = contactService.getContacts();
+    contactService.getContacts().subscribe(data => {
+        this.contacts = data;
+      });
   }
 
   remove(contact) {
