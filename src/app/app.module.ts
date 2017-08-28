@@ -10,6 +10,7 @@ import { ContactDetailsComponent } from './components/contacts/contact-details/c
 import { SharedModule } from './shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { ContactFormComponent } from './components/contacts/contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -18,6 +19,7 @@ import { CustomFormsModule } from 'ng2-validation';
     LayoutComponent,
     MessagesComponent,
     ContactDetailsComponent,
+    ContactFormComponent
   ],
   imports: [
     BrowserModule,
