@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ContactsService } from '../../shared/services/contacts.service';
 import { HttpErrorResponse } from '@angular/common/http';
+import { Contact } from '../../shared/models/contact.model';
 
 @Component({
   selector: 'app-contacts',
@@ -10,6 +11,7 @@ export class ContactsComponent {
 
   private contacts: any[] = [];
   private filter: String = '';
+  private newContact: Contact = new Contact();
 
   constructor(private contactService: ContactsService) {
     contactService.getContacts().subscribe(
