@@ -1,6 +1,6 @@
 <h1>Contacts</h1>
 
-<form #contactForm="ngForm">
+<form #contactForm="ngForm" (ngSubmit)="addContact(newContact); contactForm.reset()">
   <div class="form-group">
     <label>First name</label>
     <input #firstName="ngModel" [(ngModel)]="newContact.firstName" name='firstName' type="text" class="form-control" required minlength="2">
@@ -47,8 +47,7 @@
     (click)="contactForm.reset()"
     [disabled]="contactForm.form.pristine"
   >Reset</button>
-  <button type="button" class="btn btn-primary"
-    (click)="addContact(newContact); contactForm.reset()"
+  <button type="submit" class="btn btn-primary"
     [disabled]="!contactForm.form.valid"
   >Add Contact</button>
 </form>
