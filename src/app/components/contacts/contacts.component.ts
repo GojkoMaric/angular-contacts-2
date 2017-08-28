@@ -33,6 +33,7 @@ export class ContactsComponent {
     this.contactService.addContact(contact)
       .subscribe(
         contact => {
+          this.newContact = new Contact();
           this.contacts.push(contact);
         }
       );
