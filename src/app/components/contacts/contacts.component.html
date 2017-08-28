@@ -43,8 +43,12 @@
       </div>
     </div>
   </div>
+  <button type="button" class="btn"
+    (click)="contactForm.reset()"
+    [disabled]="contactForm.form.pristine"
+  >Reset</button>
   <button type="button" class="btn btn-primary"
-    (click)="addContact(newContact)"
+    (click)="addContact(newContact); contactForm.reset()"
     [disabled]="!contactForm.form.valid"
   >Add Contact</button>
 </form>
