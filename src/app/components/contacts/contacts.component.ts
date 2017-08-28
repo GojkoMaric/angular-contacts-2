@@ -29,8 +29,8 @@ export class ContactsComponent {
     this.contacts.splice(index, 1);
   }
 
-  addContact(firstName, lastName, email) {
-    this.contactService.addContact(firstName, lastName, email)
+  addContact(contact: Contact) {
+    this.contactService.addContact(contact)
       .subscribe(
         contact => {
           this.contacts.push(contact);
