@@ -13,7 +13,7 @@ export class ContactFormComponent {
   constructor() {
   }
 
-  addContact(contact: Contact) {
+  submitContact(contact: Contact) {
     this.onSubmit.emit(contact);
     this.newContact = new Contact();
   }
