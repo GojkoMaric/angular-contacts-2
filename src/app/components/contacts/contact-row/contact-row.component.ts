@@ -6,7 +6,13 @@ import { Contact } from '../../../shared/models/contact.model';
   templateUrl: 'contact-row.component.html'
 })
 export class ContactRowComponent {
-  @Input() contactRow: Contact;
+  private contact: Contact;
+
+  @Input()
+  set contactRow(contact: Contact) {
+    this.contact = contact;
+  }
+
   @Output() onEdit = new EventEmitter<Contact>();
   @Output() onRemove = new EventEmitter<Contact>();
 
