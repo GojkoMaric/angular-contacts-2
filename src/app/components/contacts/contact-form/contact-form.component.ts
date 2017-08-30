@@ -19,7 +19,7 @@ export class ContactFormComponent {
   }
 
   edit(contact: Contact) {
-    this.newContact = contact;    
+    this.newContact = Object.assign({}, contact);
   }
 
 }
