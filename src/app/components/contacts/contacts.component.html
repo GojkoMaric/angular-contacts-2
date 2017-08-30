@@ -10,13 +10,15 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th>Index</th>
+      <th>Old Index</th>
       <th>Name</th>
       <th>Email</th>
       <th>Actions</th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let contact of contacts" [contactRow]="contact" (onEdit)="contactForm.edit(contact)" (onRemove)="remove(contact)">
+    <tr *ngFor="let contact of contacts; let i = index" [contactRow]="contact" [index]="i" (onEdit)="contactForm.edit(contact)" (onRemove)="remove(contact)">
     </tr>
 </table>
 
