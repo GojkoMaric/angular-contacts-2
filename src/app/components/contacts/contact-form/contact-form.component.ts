@@ -18,4 +18,8 @@ export class ContactFormComponent {
     this.newContact = new Contact();
   }
 
+  edit(contact: Contact) {
+    this.newContact = contact;    
+  }
+
 }
