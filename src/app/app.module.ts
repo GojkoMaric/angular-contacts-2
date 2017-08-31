@@ -30,7 +30,9 @@ import { ContactRowComponent } from './components/contacts/contact-row/contact-r
     FormsModule,
     CustomFormsModule
   ],
-  providers: [],
+  providers: [
+    {provide: 'APP_CONFIG_DEFAULT_TITLE', useValue: "Contacts App"}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

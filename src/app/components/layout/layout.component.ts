@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { PageTitleService } from '../../shared/services/page-title.service';
 
 @Component({
@@ -8,7 +8,8 @@ import { PageTitleService } from '../../shared/services/page-title.service';
 export class LayoutComponent {
   private title : string;
 
-  constructor(private pageTitleService: PageTitleService) {
+  constructor(private pageTitleService: PageTitleService,
+  			  @Inject('APP_CONFIG_DEFAULT_TITLE') private defaultTitle: string) {
   	pageTitleService.pageTitleAnnounced$.subscribe(
       title => {
         this.title = title;
